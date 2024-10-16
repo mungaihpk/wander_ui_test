@@ -30,6 +30,6 @@ Navigate to the project directory.
 
 Execute the tests using below command:
 
-```python
+```bash
 pytest
 ```
