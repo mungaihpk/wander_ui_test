@@ -40,3 +40,8 @@ To execute the tests in headless mode (without launching the browser):
 ```bash
 pytest --pspec tests/test_landing_page.py
 ```
+
+## Sample Run
+
+Below is a sample test run.
+![img.png](img.png)
