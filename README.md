@@ -23,13 +23,20 @@ Install the browsers:
 ```bash
 playwright install
 ```
-
+Install  pspec test report library
+```bash
+pip install pytest-pspec
+```
 ## Running the Tests
 
 Navigate to the project directory.
 
-Execute the tests using below command:
-
+To execute the tests with the browser visible:
 ```bash
-pytest
+pytest --pspec tests/test_landing_page.py --headed
+```
+
+To execute the tests in headless mode (without launching the browser):
+```bash
+pytest --pspec tests/test_landing_page.py
 ```
