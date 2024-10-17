@@ -97,16 +97,17 @@ class LandingPage:
         #return text_available_days.text_content() if text_available_days.is_visible() == True else ""
 
     def get_listing_bedrooms(self, id: int) -> int:
-        text_bedrooms = self.page.locator("//div[@id='properties-list']//a["+str(id)+"]//span[contains(text(),'Next available:')]/following-sibling::div/span[1]")
+        text_bedrooms = self.page.locator("//div[@id='properties-list']//a["+str(id)+"]//div[contains(@class, 'card relative')]/following-sibling::div/div[3]/div[1]/span[1]")
         return int(text_bedrooms.text_content()) if text_bedrooms.is_visible() == True else -1
 
     def get_listing_washrooms(self, id: int) -> int:
-        text_washrooms = self.page.locator("//div[@id='properties-list']//a["+str(id)+"]//span[contains(text(),'Next available:')]/following-sibling::div/span[2]")
+        text_washrooms = self.page.locator("//div[@id='properties-list']//a["+str(id)+"]//div[contains(@class, 'card relative')]/following-sibling::div/div[3]/div[1]/span[2]")
         return int(text_washrooms.text_content()) if text_washrooms.is_visible() == True else -1
 
     def get_listing_guest_limit(self, id: int) -> int:
-        text_guests = self.page.locator("//div[@id='properties-list']//a[" + str(
-            id) + "]//span[contains(text(),'Next available:')]/following-sibling::div/span[3]")
+        # text_guests = self.page.locator("//div[@id='properties-list']//a[" + str(
+        #     id) + "]//span[contains(text(),'Next available:')]/following-sibling::div/span[3]")
+        text_guests = self.page.locator("//div[@id='properties-list']//a[" + str(id) + "]//div[contains(@class, 'card relative')]/following-sibling::div/div[3]/div[1]/span[3]")
         return int(text_guests.text_content()) if text_guests.is_visible() == True else -1
 
     def _no_results(self) -> bool:
